@@ -1,0 +1,2 @@
+# QuickMsg
+Мессенджер на Fastapi
