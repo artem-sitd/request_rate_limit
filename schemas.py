@@ -1,11 +1,12 @@
-# schemas.py
 from pydantic import BaseModel
 
-class UserCreate(BaseModel):
+
+class UserCreateSchema(BaseModel):
     nickname: str
     phone: str
 
-class User(BaseModel):
+
+class UserSchema(BaseModel):
     id: int
     nickname: str
     phone: str
@@ -13,12 +14,14 @@ class User(BaseModel):
     class Config:
         orm_mode = True
 
-class MessageCreate(BaseModel):
+
+class MessageCreateSchema(BaseModel):
     conversation_id: int
     sender_id: int
     content: str
 
-class Message(BaseModel):
+
+class MessageSchema(BaseModel):
     id: int
     conversation_id: int
     sender_id: int
