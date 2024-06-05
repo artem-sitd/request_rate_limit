@@ -20,8 +20,8 @@ class Conversation(Base):
     id = Column(Integer, primary_key=True, index=True)
     user1_id = Column(Integer, ForeignKey("users.id"))
     user2_id = Column(Integer, ForeignKey("users.id"))
-    user1 = relationship("User", foreign_keys=[user1_id], back_populates="conversations_as_user1")
-    user2 = relationship("User", foreign_keys=[user2_id], back_populates="conversations_as_user2")
+    user1 = relationship("User", foreign_keys='Conversation.user1_id', back_populates="conversations_as_user1")
+    user2 = relationship("User", foreign_keys='Conversation.user2_id,', back_populates="conversations_as_user2")
     messages = relationship("Message", back_populates="conversation")
 
 
