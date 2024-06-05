@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messenger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Messenger</h1>
+    <div>
+        <h2>Register</h2>
+        <form id="registerForm">
+            <input type="text" id="nickname" placeholder="Nickname" required>
+            <input type="text" id="phone" placeholder="Phone" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <div>
+        <h2>Search User</h2>
+        <input type="text" id="searchQuery" placeholder="Nickname or Phone">
+        <button id="searchButton">Search</button>
+        <div id="searchResult"></div>
+    </div>
+    <div>
+        <h2>Messages</h2>
+        <div id="messages"></div>
+        <form id="messageForm">
+            <input type="text" id="messageContent" placeholder="Your message" required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
