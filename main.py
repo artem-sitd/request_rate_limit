@@ -1,23 +1,6 @@
-from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import HTMLResponse
-from crud import router as crud_router
-from database import engine, Base
+from app import app
+from app.router import all_routes
 
-app = FastAPI()
-
-app.mount("/frontend", StaticFiles(directory="./frontend"), name="frontend")
-
-app.include_router(crud_router)
-
-
-@app.get("/", response_class=HTMLResponse)
-async def read_index():
-    with open("frontend/index.html") as f:
-        return HTMLResponse(content=f.read(), status_code=200)
-
-
-@app.on_event("startup")
-async def on_startup():
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
+if __name__ == "__main__":
+    app.register_blueprint(all_routes)
+    app.run(host="0.0.0.0", port=5000)

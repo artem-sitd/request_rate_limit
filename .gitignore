@@ -146,3 +146,6 @@ dmypy.json
 /module_08_deploy/yandexcloud.pub
 /module_30_ci_linters/ci_venv/
 /.env.docker
+/quickmsg
+/quickmsg.pub
+/certs/
